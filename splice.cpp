@@ -26,11 +26,12 @@ bool splice(const fs::path& dir) {
         int i = 0; // Record # entries copied
         for (const fs::directory_entry& entry : fs::directory_iterator(dir)) {
             std::error_code e;
+            fs::copy(entry, parent_path);
             if (e) { std::cerr << "Unable to splice--could not copy " << entry.path().string() << ": " << e << std::endl; return false; }
             i++;
         }
         // Delete directory
-        std::cerr << i << "entries copied to parent. Deleting directory..." << std::endl;
+        std::cerr << i << " entries copied to parent. Deleting directory..." << std::endl;
         fs::remove_all(dir);
 
     } catch (const fs::filesystem_error& err) {

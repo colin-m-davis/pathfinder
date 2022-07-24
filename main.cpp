@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <filesystem>  
 #include <iostream>
 
@@ -69,7 +70,8 @@ int main(int argc, char** argv) {
             std::cin >> confirm;
             if (confirm != "Y") { std::cerr << "Splice operation aborted early" << std::endl; return 0; }
 
-            std::string dir = argv[2];
+            char rp[256];
+            std::string dir = realpath(argv[2], rp);
             if (splice(dir)) {
                 std::cerr << "Successfully spliced at " << dir << std::endl;
             } else {
