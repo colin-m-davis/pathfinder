@@ -1,5 +1,5 @@
-#ifndef LOCATE_CPP_
-#define LOCATE_CPP_
+#ifndef SPLICE_CPP_
+#define SPLICE_CPP_
 
 #include <filesystem>
 #include <string>
@@ -41,4 +41,4 @@ bool splice(const fs::path& dir) {
     return true;
 }
 
-#endif // LOCATE_CPP_
+#endif // SPLICE_CPP_

@@ -1,5 +1,5 @@
-#ifndef SEARCH_CPP_
-#define SEARCH_CPP_
+#ifndef LOCATE_CPP_
+#define LOCATE_CPP_
 
 #include <filesystem>
 #include <string>
@@ -70,4 +70,4 @@ std::vector<std::string> locate(
     return matches;
 }
 
-#endif // SEARCH_CPP_
+#endif // LOCATE_CPP_
